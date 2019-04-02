@@ -1,36 +1,29 @@
-import os
-
 from setuptools import setup
 
 
-def long_description():
-    os.system('pandoc --from=markdown --to=rst --output=README.rst README.md')
-    readme_fn = os.path.join(os.path.dirname(__file__), 'README.rst')
-    if os.path.exists(readme_fn):
-        with open(readme_fn) as f:
-            return f.read()
-    else:
-        return 'not available'
+with open('README.md') as f:
+    long_description = f.read()
 
 
 setup(
-  name='mailtest',
-  version=__import__('mailtest').__version__,
-  description="A unit testing tool for code that sends email. "
-              "Flask-based version of https://github.com/keredson/mailtest",
-  long_description=long_description(),
-  author='Derek Anderson',
-  author_email='public@kered.org',
-  url='https://github.com/keredson/mailtest',
-  packages=[],
-  py_modules=['mailtest'],
-  classifiers=[
-    'Development Status :: 4 - Beta',
-    'Intended Audience :: Developers',
-    'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
-    'Operating System :: OS Independent',
-    'Programming Language :: Python',
-    'Programming Language :: Python :: 3',
-  ],
+    name='mailtest',
+    version='2.0.0',
+    description="A unit testing tool for code that sends email. "
+                "Flask-based version of https://github.com/keredson/mailtest",
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    author='Derek Anderson',
+    author_email='public@kered.org',
+    url='https://github.com/ConsenSys/mailtest-flask',
+    packages=[],
+    py_modules=['mailtest'],
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
+    ],
 )
 

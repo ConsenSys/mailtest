@@ -11,8 +11,6 @@ import time
 import flask
 from wsgiref.simple_server import make_server, WSGIRequestHandler, WSGIServer
 
-__version__ = '1.1.3'
-
 
 try:
     import sendgrid
