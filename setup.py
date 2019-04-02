@@ -2,19 +2,22 @@ import os
 
 from setuptools import setup
 
+
 def long_description():
-  os.system('pandoc --from=markdown --to=rst --output=README.rst README.md')
-  readme_fn = os.path.join(os.path.dirname(__file__), 'README.rst')
-  if os.path.exists(readme_fn):
-    with open(readme_fn) as f:
-      return f.read()
-  else:
-    return 'not available'
+    os.system('pandoc --from=markdown --to=rst --output=README.rst README.md')
+    readme_fn = os.path.join(os.path.dirname(__file__), 'README.rst')
+    if os.path.exists(readme_fn):
+        with open(readme_fn) as f:
+            return f.read()
+    else:
+        return 'not available'
+
 
 setup(
   name='mailtest',
   version=__import__('mailtest').__version__,
-  description="A unit testing tool for code that sends email.",
+  description="A unit testing tool for code that sends email. "
+              "Flask-based version of https://github.com/keredson/mailtest",
   long_description=long_description(),
   author='Derek Anderson',
   author_email='public@kered.org',

@@ -9,18 +9,11 @@ with mailtest.Server() as mt:
     assert len(mt.emails) == 1
 ```
 
-## Install
-```
-pip3 install mailtest
-```
-
 ## Configuration
 Configuration is done via kwargs to `mailtest.Server()`.  Options:
 - `smtp_port` (default: 1025)
 - `sendgrid_port` (default: `None`)
 
-## Speed
-MailTest can test receive approx. 4000 emails/second on an Intel(R) Core(TM) i5-7260U CPU @ 2.20GHz.
 
 ## Testing
 ```
@@ -39,3 +32,10 @@ Ran 2 tests in 0.543s
 
 OK
 ```
+
+## I am a fork!
+Major kudos to the original author, keredson.
+
+https://github.com/keredson/mailtest
+
+The biggest logical difference between the two versions is moving from `bottle` to `flask`.
